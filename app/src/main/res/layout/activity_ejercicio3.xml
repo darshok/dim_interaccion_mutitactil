@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ejercicio2.Ejercicio2">
+    tools:context=".Ejercicio3.Ejercicio3">
 
-    <upv.dim.interacccionmultitactil.Ejercicio2.MyView2
-        android:id="@+id/view2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
-
+    <upv.dim.interacccionmultitactil.Ejercicio3.MyView3
+    android:id="@+id/view2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"/>
 </RelativeLayout>
