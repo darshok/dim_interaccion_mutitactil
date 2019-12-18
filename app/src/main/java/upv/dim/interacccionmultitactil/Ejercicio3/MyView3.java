@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.core.view.MotionEventCompat;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -21,10 +23,9 @@ public class MyView3 extends View {
     //en un hash map guardar las lineas que se componen de x e y
     Random random = new Random();
     Paint paint = new Paint();
-    float prevX , prevY , newX , newY;
     int color = Color. BLACK;
     private HashMap<Integer, Path> lines = new HashMap<>();
-    private Path path = new Path();
+    private HashMap<Integer, Integer> colors = new HashMap<>();
 
     public MyView3(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -38,36 +39,45 @@ public class MyView3 extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        for(int i = 0; i < lines.size(); i++) {
-            paint.setColor(this.color);
-            canvas.drawPath(lines.get(i), paint);
+        paint.setColor(this.color);
+        for(Integer i : lines.keySet()) {
+            Path path = lines.get(i);
+            if(path != null) {
+                paint.setColor(colors.get(i));
+                canvas.drawPath(path, paint);
+            }
         }
     }
 
-
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
+        int index = event.getActionIndex();
+        int id = event.getPointerId(index);
+
+        switch (event.getActionMasked()){
             case MotionEvent.ACTION_DOWN:
-                prevX = event.getX();
-                prevY = event.getY();
-                path.moveTo(prevX, prevY);
+            case MotionEvent.ACTION_POINTER_DOWN:
+                Path path1 = new Path();
                 this.color = Color.rgb(random.nextInt(255),random.nextInt(255),random.nextInt(255));
+                path1.moveTo(event.getX(index), event.getY(index));
+                lines.put(id,path1);
+                colors.put(id, color);
                 break;
             case MotionEvent.ACTION_MOVE:
-                newX = event.getX();
-                newY = event.getY();
-                for (int i = 0; i < event.getPointerCount(); i++) {
-                    path.lineTo(event.getX(), event.getY());
-                    lines.put(i, path);
+                for(int i = 0; i < event.getPointerCount(); i++) {
+                    Path path2 = lines.get(event.getPointerId(i));
+                    if (path2 != null) {
+                        path2.lineTo(event.getX(i), event.getY(i));
+                    }
                 }
-                invalidate();
                 break;
             case MotionEvent.ACTION_UP:
-                newX = newY = prevY = prevX = -1;
+            case MotionEvent.ACTION_POINTER_UP:
+                lines.remove(id);
+                colors.remove(id);
                 break;
         }
+        invalidate();
         return true;
     }
 }

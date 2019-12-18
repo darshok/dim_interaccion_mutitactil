@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Ejercicio2.Ejercicio2">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
     <upv.dim.interacccionmultitactil.Ejercicio2.MyView2
         android:id="@+id/view2"
         android:layout_width="wrap_content"
