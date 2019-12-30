@@ -11,6 +11,7 @@ import android.view.View;
 import upv.dim.interacccionmultitactil.Ejercicio1.Ejercicio1;
 import upv.dim.interacccionmultitactil.Ejercicio2.Ejercicio2;
 import upv.dim.interacccionmultitactil.Ejercicio3.Ejercicio3;
+import upv.dim.interacccionmultitactil.Ejercicio4.Ejercicio4;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        AppCompatButton activity4Bt = findViewById(R.id.buttonExercise4);
+
+        activity4Bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Ejercicio4.class));
+            }
+        });
 
     }
 }

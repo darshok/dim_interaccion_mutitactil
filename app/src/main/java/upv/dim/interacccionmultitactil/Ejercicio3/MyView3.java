@@ -9,18 +9,13 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import androidx.core.view.MotionEventCompat;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-import upv.dim.interacccionmultitactil.Line;
-import upv.dim.interacccionmultitactil.Point;
 
 public class MyView3 extends View {
 
-    //en un hash map guardar las lineas que se componen de x e y
+    //En un hash map guardar las lineas que se componen de x e y
     Random random = new Random();
     Paint paint = new Paint();
     int color = Color. BLACK;
@@ -55,23 +50,25 @@ public class MyView3 extends View {
         int id = event.getPointerId(index);
 
         switch (event.getActionMasked()){
-            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_DOWN: //Contiene el mismo codigo que action_pointer_down
             case MotionEvent.ACTION_POINTER_DOWN:
-                Path path1 = new Path();
+                Path pathPointerDown = new Path();
                 this.color = Color.rgb(random.nextInt(255),random.nextInt(255),random.nextInt(255));
-                path1.moveTo(event.getX(index), event.getY(index));
-                lines.put(id,path1);
+                pathPointerDown.moveTo(event.getX(index), event.getY(index));
+                lines.put(id,pathPointerDown);
                 colors.put(id, color);
                 break;
+
             case MotionEvent.ACTION_MOVE:
                 for(int i = 0; i < event.getPointerCount(); i++) {
-                    Path path2 = lines.get(event.getPointerId(i));
-                    if (path2 != null) {
-                        path2.lineTo(event.getX(i), event.getY(i));
+                    Path pathMove = lines.get(event.getPointerId(i));
+                    if (pathMove != null) {
+                        pathMove.lineTo(event.getX(i), event.getY(i));
                     }
                 }
                 break;
-            case MotionEvent.ACTION_UP:
+
+            case MotionEvent.ACTION_UP: //Contiene el mismo codigo que action_pointer_up
             case MotionEvent.ACTION_POINTER_UP:
                 lines.remove(id);
                 colors.remove(id);

@@ -1,12 +1,14 @@
 package upv.dim.interacccionmultitactil;
 
-public class Point {
+public class Circle {
     private float x;
     private float y;
+    private int color;
 
-    public Point(float x, float y) {
+    public Circle(float x, float y, int color) {
         this.x = x;
         this.y = y;
+        this.color = color;
     }
 
     public float getX() {
@@ -23,5 +25,13 @@ public class Point {
 
     public void setY(float y) {
         this.y = y;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 }

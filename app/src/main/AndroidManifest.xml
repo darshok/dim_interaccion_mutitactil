@@ -9,19 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Ejercicio3.Ejercicio3"
+        <activity android:name=".Ejercicio4.Ejercicio4"></activity>
+        <activity
+            android:name=".Ejercicio3.Ejercicio3"
             android:label="Ejercicio 3">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="upv.dim.interacccionmultitactil.MainActivity" />
         </activity>
-        <activity android:name=".Ejercicio2.Ejercicio2"
+        <activity
+            android:name=".Ejercicio2.Ejercicio2"
             android:label="Ejercicio 2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="upv.dim.interacccionmultitactil.MainActivity" />
         </activity>
-        <activity android:name=".Ejercicio1.Ejercicio1"
+        <activity
+            android:name=".Ejercicio1.Ejercicio1"
             android:label="Ejercicio 1">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
