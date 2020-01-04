@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ejercicio1.Ejercicio1">
+    tools:context=".Ejercicio5.Ejercicio5">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar1"
+        android:id="@+id/my_toolbar5"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
@@ -15,10 +15,11 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
-    <upv.dim.interacccionmultitactil.Ejercicio1.MyView
-        android:id="@+id/view"
+    <upv.dim.interacccionmultitactil.Ejercicio5.MyView5
+        android:id="@+id/view5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
+
 </RelativeLayout>

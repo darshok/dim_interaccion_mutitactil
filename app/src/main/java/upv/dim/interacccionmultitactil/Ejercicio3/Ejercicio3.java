@@ -15,7 +15,7 @@ public class Ejercicio3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicio3);
 
-        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = findViewById(R.id.my_toolbar3);
         setSupportActionBar(myToolbar);
 
         // Get a support ActionBar corresponding to this toolbar

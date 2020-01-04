@@ -12,6 +12,8 @@ import upv.dim.interacccionmultitactil.Ejercicio1.Ejercicio1;
 import upv.dim.interacccionmultitactil.Ejercicio2.Ejercicio2;
 import upv.dim.interacccionmultitactil.Ejercicio3.Ejercicio3;
 import upv.dim.interacccionmultitactil.Ejercicio4.Ejercicio4;
+import upv.dim.interacccionmultitactil.Ejercicio5.Ejercicio5;
+import upv.dim.interacccionmultitactil.Ejercicio6.Ejercicio6;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,6 +58,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Ejercicio4.class));
+            }
+        });
+
+        AppCompatButton activity5Bt = findViewById(R.id.buttonExercise5);
+
+        activity5Bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Ejercicio5.class));
+            }
+        });
+
+        AppCompatButton activity6Bt = findViewById(R.id.buttonExercise6);
+
+        activity6Bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Ejercicio6.class));
             }
         });
 

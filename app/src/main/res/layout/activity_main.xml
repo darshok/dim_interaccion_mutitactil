@@ -51,6 +51,13 @@
             android:layout_height="wrap_content"
             android:text="Ejercicio 5"
             android:layout_margin="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonExercise6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Ejercicio 6" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
